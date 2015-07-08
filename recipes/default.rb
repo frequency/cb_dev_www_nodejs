@@ -14,9 +14,14 @@ time = Time.now.to_i
   action :run
 end
 
-bash 'update and install components' do
+bash 'update nodejs version and restart app' do
   code <<-"EOH"
-    /usr/bin/yum -y update
+    /usr/local/bin/npm cache clean -f
+    /usr/local/bin/npm install -g n
+    /usr/local/bin/n stable
+    /usr/bin/monit stop node_web_app_frequency_new_ui
+    /bin/sleep 15
+    /usr/bin/monit start node_web_app_frequency_new_ui
   EOH
   action :run
 end
