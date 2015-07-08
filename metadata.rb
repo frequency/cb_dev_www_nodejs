@@ -1,0 +1,7 @@
+name             'cb_dev_www_nodejs'
+maintainer       'Frequency'
+maintainer_email 'basit@frequency.com'
+license          'All rights reserved'
+description      'Installs/Configures cb_dev_www_nodejs'
+long_description 'Installs/Configures cb_dev_www_nodejs'
+version          '0.1.0'
